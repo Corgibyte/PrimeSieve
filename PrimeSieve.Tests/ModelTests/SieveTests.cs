@@ -15,10 +15,24 @@ namespace PrimeSieve.Tests
     }
 
     [TestMethod]
-    public void FindPrimes_OnePrimeWhenInputTwo_EmptyList()
+    public void FindPrimes_OnePrimeWhenInputTwo_PrimeList()
     {
       List<int> primeList = new List<int> { 2 };
       CollectionAssert.AreEqual(primeList, Sieve.FindPrimes(2));
+    }
+
+    [TestMethod]
+    public void FindPrimes_TwoPrimesWhenInputFour_PrimeList()
+    {
+      List<int> primeList = new List<int> { 2, 3 };
+      CollectionAssert.AreEqual(primeList, Sieve.FindPrimes(4));
+    }
+
+    [TestMethod]
+    public void FindPrimes_PrimesTo15_PrimeList()
+    {
+      List<int> primeList = new List<int> { 2, 3, 5, 7, 11, 13 };
+      CollectionAssert.AreEqual(primeList, Sieve.FindPrimes(15));
     }
   }
 }
