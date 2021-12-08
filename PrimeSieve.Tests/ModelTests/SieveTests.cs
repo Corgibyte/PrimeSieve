@@ -8,10 +8,17 @@ namespace PrimeSieve.Tests
   public class SieveTests
   {
     [TestMethod]
-    public void FindPrimes_EmptyListWhenZero_EmptyList()
+    public void FindPrimes_EmptyListWhenInputZero_EmptyList()
     {
       List<int> emptyList = new List<int> { };
       CollectionAssert.AreEqual(emptyList, Sieve.FindPrimes(0));
+    }
+
+    [TestMethod]
+    public void FindPrimes_OnePrimeWhenInputTwo_EmptyList()
+    {
+      List<int> primeList = new List<int> { 2 };
+      CollectionAssert.AreEqual(primeList, Sieve.FindPrimes(2));
     }
   }
 }
